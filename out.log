@@ -1,0 +1,541 @@
+
+C:\Users\Zsombi\Desktop\Allamvizsga>clang-check -extra-arg=-std=c++1y -ast-dump -ast-dump-filter=main C:/Users/Zsombi/Desktop/Allamvizsga/DIPLOMA/data/100_users/ania7\1842485_1481486_ania7.cpp 
+Dumping remainder:
+FunctionDecl 0x19664f0a558 <C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h:530:29, col:84> col:44 remainder 'double (double, double) __attribute__((cdecl))':'double (double, double)'
+|-ParmVarDecl 0x19664f0a420 <col:59, col:66> col:66 _X 'double'
+|-ParmVarDecl 0x19664f0a4a0 <col:75, col:82> col:82 _Y 'double'
+`-NoThrowAttr 0x19664f0a608 <col:44> Implicit
+
+Dumping remainderf:
+FunctionDecl 0x19664f09c88 <C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h:574:29, col:86> col:47 remainderf 'float (float, float) __attribute__((cdecl))':'float (float, float)'
+|-ParmVarDecl 0x19664f09b50 <col:63, col:69> col:69 _X 'float'
+|-ParmVarDecl 0x19664f09bd0 <col:78, col:84> col:84 _Y 'float'
+`-NoThrowAttr 0x19664f09d38 <col:47> Implicit
+
+Dumping remainderl:
+FunctionDecl 0x1966501c060 <C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h:922:29, col:100> col:49 remainderl 'long double (long double, long double) __attribute__((cdecl))':'long double (long double, long double)'
+|-ParmVarDecl 0x1966501bf28 <col:65, col:77> col:77 _X 'long double'
+|-ParmVarDecl 0x1966501bfa8 <col:86, col:98> col:98 _Y 'long double'
+`-NoThrowAttr 0x1966501c110 <col:49> Implicit
+
+Dumping main:
+FunctionDecl 0x19665964f90 <C:\Users\Zsombi\Desktop\Allamvizsga\DIPLOMA\data\100_users\ania7\1842485_1481486_ania7.cpp:48:1, line:56:1> line:48:5 main 'int ()'
+`-CompoundStmt 0x19665965650 <line:49:1, line:56:1>
+  |-DeclStmt 0x196659650b0 <line:50:2, col:8>
+  | `-VarDecl 0x19665965048 <col:2, col:6> col:6 used tt 'int'
+  |-CallExpr 0x196659651a0 <line:52:2, col:17> 'int'
+  | |-ImplicitCastExpr 0x19665965188 <col:2> 'int (*)(const char *const, ...) __attribute__((cdecl))' <FunctionToPointerDecay>
+  | | `-DeclRefExpr 0x19665965168 <col:2> 'int (const char *const, ...) __attribute__((cdecl))':'int (const char *const, ...)' lvalue Function 0x19664e8ab48 'scanf' 'int (const char *const, ...) __attribute__((cdecl))':'int (const char *const, ...)'
+  | |-ImplicitCastExpr 0x196659651d0 <col:8> 'const char *' <ArrayToPointerDecay>
+  | | `-StringLiteral 0x19665965110 <col:8> 'const char [3]' lvalue "%d"
+  | `-UnaryOperator 0x19665965150 <col:14, col:15> 'int *' prefix '&' cannot overflow
+  |   `-DeclRefExpr 0x19665965130 <col:15> 'int' lvalue Var 0x19665965048 'tt' 'int'
+  |-ForStmt 0x196659655e0 <line:53:2, line:54:52>
+  | |-DeclStmt 0x19665965290 <line:53:6, col:15>
+  | | `-VarDecl 0x19665965200 <col:6, col:14> col:10 used i 'int' cinit
+  | |   `-IntegerLiteral 0x19665965268 <col:14> 'int' 1
+  | |-<<<NULL>>>
+  | |-BinaryOperator 0x19665965318 <col:17, col:22> 'bool' '<='
+  | | |-ImplicitCastExpr 0x196659652e8 <col:17> 'int' <LValueToRValue>
+  | | | `-DeclRefExpr 0x196659652a8 <col:17> 'int' lvalue Var 0x19665965200 'i' 'int'
+  | | `-ImplicitCastExpr 0x19665965300 <col:22> 'int' <LValueToRValue>
+  | |   `-DeclRefExpr 0x196659652c8 <col:22> 'int' lvalue Var 0x19665965048 'tt' 'int'
+  | |-UnaryOperator 0x19665965358 <col:26, col:27> 'int' postfix '++'
+  | | `-DeclRefExpr 0x19665965338 <col:26> 'int' lvalue Var 0x19665965200 'i' 'int'
+  | `-CallExpr 0x19665965578 <line:54:3, col:52> 'int'
+  |   |-ImplicitCastExpr 0x19665965560 <col:3> 'int (*)(const char *const, ...) __attribute__((cdecl))' <FunctionToPointerDecay>
+  |   | `-DeclRefExpr 0x19665965540 <col:3> 'int (const char *const, ...) __attribute__((cdecl))':'int (const char *const, ...)' lvalue Function 0x19664e7fee8 'printf' 'int (const char *const, ...) __attribute__((cdecl))':'int (const char *const, ...)'
+  |   |-ImplicitCastExpr 0x196659655b0 <col:10> 'const char *' <ArrayToPointerDecay>
+  |   | `-StringLiteral 0x196659653b8 <col:10> 'const char [14]' lvalue "Case #%d: %s\n"
+  |   |-ImplicitCastExpr 0x196659655c8 <col:28> 'int' <LValueToRValue>
+  |   | `-DeclRefExpr 0x196659653e0 <col:28> 'int' lvalue Var 0x19665965200 'i' 'int'
+  |   `-ConditionalOperator 0x19665965510 <col:31, col:48> 'const char *'
+  |     |-CallExpr 0x19665965480 <col:31, col:36> 'bool'
+  |     | `-ImplicitCastExpr 0x19665965468 <col:31> 'bool (*)()' <FunctionToPointerDecay>
+  |     |   `-DeclRefExpr 0x19665965448 <col:31> 'bool ()' lvalue Function 0x196658c4648 'test' 'bool ()'
+  |     |-ImplicitCastExpr 0x196659654e0 <col:40> 'const char *' <ArrayToPointerDecay>
+  |     | `-StringLiteral 0x196659654a0 <col:40> 'const char [4]' lvalue "YES"
+  |     `-ImplicitCastExpr 0x196659654f8 <col:48> 'const char *' <ArrayToPointerDecay>
+  |       `-StringLiteral 0x196659654c0 <col:48> 'const char [3]' lvalue "NO"
+  `-ReturnStmt 0x19665965640 <line:55:2, col:9>
+    `-IntegerLiteral 0x19665965618 <col:9> 'int' 0
+
+
+
+C:\Users\Zsombi\Desktop\Allamvizsga>clang-check -extra-arg=-std=c++1y -ast-dump -ast-dump-filter=test C:/Users/Zsombi/Desktop/Allamvizsga/DIPLOMA/data/100_users/ania7\1842485_1481486_ania7.cpp 
+Dumping _dtest:
+FunctionDecl 0x1d0e8360c88 <C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h:185:25, col:62> col:39 used _dtest 'short (double *) __attribute__((cdecl))':'short (double *)'
+`-ParmVarDecl 0x1d0e8360b70 <col:51, col:59> col:59 _Px 'double *'
+
+Dumping _ldtest:
+FunctionDecl 0x1d0e8360e88 <C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h:186:25, col:68> col:39 used _ldtest 'short (long double *) __attribute__((cdecl))':'short (long double *)'
+`-ParmVarDecl 0x1d0e8360d70 <col:52, col:65> col:65 _Px 'long double *'
+
+Dumping _fdtest:
+FunctionDecl 0x1d0e84101e8 <C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h:187:25, col:62> col:39 used _fdtest 'short (float *) __attribute__((cdecl))':'short (float *)'
+`-ParmVarDecl 0x1d0e84100d0 <col:52, col:59> col:59 _Px 'float *'
+
+Dumping _bittest:
+FunctionDecl 0x1d0e87c39d8 prev 0x1d0e87c3818 <C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\intrin0.h:124:11, col:52> col:25 _bittest 'unsigned char (const long *, long) throw()'
+|-ParmVarDecl 0x1d0e87c3630 <col:34, col:45> col:46 'const long *'
+|-ParmVarDecl 0x1d0e87c36b0 <col:48> col:52 'long'
+`-NoThrowAttr 0x1d0e87c3af8 <col:25> Inherited Implicit
+
+Dumping _interlockedbittestandset:
+FunctionDecl 0x1d0e87baa18 prev 0x1d0e87ba858 <C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\intrin0.h:243:11, col:72> col:25 _interlockedbittestandset 'unsigned char (volatile long *, long) throw()'
+|-ParmVarDecl 0x1d0e87ba670 <col:51, col:65> col:66 'volatile long *'
+|-ParmVarDecl 0x1d0e87ba6f0 <col:68> col:72 'long'
+`-NoThrowAttr 0x1d0e87bab38 <col:25> Inherited Implicit
+
+Dumping test:
+FunctionDecl 0x1d0e8de45e8 <C:\Users\Zsombi\Desktop\Allamvizsga\DIPLOMA\data\100_users\ania7\1842485_1481486_ania7.cpp:10:1, line:46:1> line:10:6 used test 'bool ()'
+`-CompoundStmt 0x1d0e8e848d0 <line:11:1, line:46:1>
+  |-DeclStmt 0x1d0e8de47a0 <line:12:2, col:9>
+  | |-VarDecl 0x1d0e8de46a0 <col:2, col:6> col:6 used n 'int'
+  | `-VarDecl 0x1d0e8de4720 <col:2, col:8> col:8 used D 'int'
+  |-CallExpr 0x1d0e8de4960 <line:13:2, col:16> 'int'
+  | |-ImplicitCastExpr 0x1d0e8de4948 <col:2> 'int (*)(const char *const, ...) __attribute__((cdecl))' <FunctionToPointerDecay>
+  | | `-DeclRefExpr 0x1d0e8de48d0 <col:2> 'int (const char *const, ...) __attribute__((cdecl))':'int (const char *const, ...)' lvalue Function 0x1d0e83a4ae8 'scanf' 'int (const char *const, ...) __attribute__((cdecl))':'int (const char *const, ...)'
+  | |-ImplicitCastExpr 0x1d0e8de4990 <col:8> 'const char *' <ArrayToPointerDecay>
+  | | `-StringLiteral 0x1d0e8de4878 <col:8> 'const char [3]' lvalue "%d"
+  | `-UnaryOperator 0x1d0e8de48b8 <col:14, col:15> 'int *' prefix '&' cannot overflow
+  |   `-DeclRefExpr 0x1d0e8de4898 <col:15> 'int' lvalue Var 0x1d0e8de46a0 'n' 'int'
+  |-ForStmt 0x1d0e8de4df0 <line:14:2, line:15:29>
+  | |-DeclStmt 0x1d0e8de4a50 <line:14:6, col:15>
+  | | `-VarDecl 0x1d0e8de49c0 <col:6, col:14> col:10 used i 'int' cinit
+  | |   `-IntegerLiteral 0x1d0e8de4a28 <col:14> 'int' 0
+  | |-<<<NULL>>>
+  | |-BinaryOperator 0x1d0e8de4ad8 <col:17, col:21> 'bool' '<'
+  | | |-ImplicitCastExpr 0x1d0e8de4aa8 <col:17> 'int' <LValueToRValue>
+  | | | `-DeclRefExpr 0x1d0e8de4a68 <col:17> 'int' lvalue Var 0x1d0e8de49c0 'i' 'int'
+  | | `-ImplicitCastExpr 0x1d0e8de4ac0 <col:21> 'int' <LValueToRValue>
+  | |   `-DeclRefExpr 0x1d0e8de4a88 <col:21> 'int' lvalue Var 0x1d0e8de46a0 'n' 'int'
+  | |-UnaryOperator 0x1d0e8de4b18 <col:24, col:25> 'int' postfix '++'
+  | | `-DeclRefExpr 0x1d0e8de4af8 <col:24> 'int' lvalue Var 0x1d0e8de49c0 'i' 'int'
+  | `-CallExpr 0x1d0e8de4da0 <line:15:3, col:29> 'int'
+  |   |-ImplicitCastExpr 0x1d0e8de4d88 <col:3> 'int (*)(const char *const, ...) __attribute__((cdecl))' <FunctionToPointerDecay>
+  |   | `-DeclRefExpr 0x1d0e8de4d68 <col:3> 'int (const char *const, ...) __attribute__((cdecl))':'int (const char *const, ...)' lvalue Function 0x1d0e83a4ae8 'scanf' 'int (const char *const, ...) __attribute__((cdecl))':'int (const char *const, ...)'
+  |   |-ImplicitCastExpr 0x1d0e8de4dd8 <col:9> 'const char *' <ArrayToPointerDecay>
+  |   | `-StringLiteral 0x1d0e8de4bf8 <col:9> 'const char [5]' lvalue "%d%d"
+  |   |-UnaryOperator 0x1d0e8de4ca8 <col:17, col:21> 'int *' prefix '&' cannot overflow
+  |   | `-ArraySubscriptExpr 0x1d0e8de4c88 <col:18, col:21> 'int' lvalue
+  |   |   |-ImplicitCastExpr 0x1d0e8de4c58 <col:18> 'int *' <ArrayToPointerDecay>
+  |   |   | `-DeclRefExpr 0x1d0e8de4c18 <col:18> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |   |   `-ImplicitCastExpr 0x1d0e8de4c70 <col:20> 'int' <LValueToRValue>
+  |   |     `-DeclRefExpr 0x1d0e8de4c38 <col:20> 'int' lvalue Var 0x1d0e8de49c0 'i' 'int'
+  |   `-UnaryOperator 0x1d0e8de4d50 <col:24, col:28> 'int *' prefix '&' cannot overflow
+  |     `-ArraySubscriptExpr 0x1d0e8de4d30 <col:25, col:28> 'int' lvalue
+  |       |-ImplicitCastExpr 0x1d0e8de4d00 <col:25> 'int *' <ArrayToPointerDecay>
+  |       | `-DeclRefExpr 0x1d0e8de4cc0 <col:25> 'int [10101]' lvalue Var 0x1d0e8de4468 'l' 'int [10101]'
+  |       `-ImplicitCastExpr 0x1d0e8de4d18 <col:27> 'int' <LValueToRValue>
+  |         `-DeclRefExpr 0x1d0e8de4ce0 <col:27> 'int' lvalue Var 0x1d0e8de49c0 'i' 'int'
+  |-CallExpr 0x1d0e8de4f00 <line:16:2, col:16> 'int'
+  | |-ImplicitCastExpr 0x1d0e8de4ee8 <col:2> 'int (*)(const char *const, ...) __attribute__((cdecl))' <FunctionToPointerDecay>
+  | | `-DeclRefExpr 0x1d0e8de4ec8 <col:2> 'int (const char *const, ...) __attribute__((cdecl))':'int (const char *const, ...)' lvalue Function 0x1d0e83a4ae8 'scanf' 'int (const char *const, ...) __attribute__((cdecl))':'int (const char *const, ...)'
+  | |-ImplicitCastExpr 0x1d0e8de4f30 <col:8> 'const char *' <ArrayToPointerDecay>
+  | | `-StringLiteral 0x1d0e8de4e70 <col:8> 'const char [3]' lvalue "%d"
+  | `-UnaryOperator 0x1d0e8de4eb0 <col:14, col:15> 'int *' prefix '&' cannot overflow
+  |   `-DeclRefExpr 0x1d0e8de4e90 <col:15> 'int' lvalue Var 0x1d0e8de4720 'D' 'int'
+  |-ForStmt 0x1d0e8de51a8 <line:17:2, col:39>
+  | |-DeclStmt 0x1d0e8de4ff0 <col:6, col:15>
+  | | `-VarDecl 0x1d0e8de4f60 <col:6, col:14> col:10 used i 'int' cinit
+  | |   `-IntegerLiteral 0x1d0e8de4fc8 <col:14> 'int' 0
+  | |-<<<NULL>>>
+  | |-BinaryOperator 0x1d0e8de5078 <col:17, col:21> 'bool' '<'
+  | | |-ImplicitCastExpr 0x1d0e8de5048 <col:17> 'int' <LValueToRValue>
+  | | | `-DeclRefExpr 0x1d0e8de5008 <col:17> 'int' lvalue Var 0x1d0e8de4f60 'i' 'int'
+  | | `-ImplicitCastExpr 0x1d0e8de5060 <col:21> 'int' <LValueToRValue>
+  | |   `-DeclRefExpr 0x1d0e8de5028 <col:21> 'int' lvalue Var 0x1d0e8de46a0 'n' 'int'
+  | |-UnaryOperator 0x1d0e8de50b8 <col:24, col:25> 'int' postfix '++'
+  | | `-DeclRefExpr 0x1d0e8de5098 <col:24> 'int' lvalue Var 0x1d0e8de4f60 'i' 'int'
+  | `-BinaryOperator 0x1d0e8de5188 <col:29, col:39> 'int' lvalue '='
+  |   |-ArraySubscriptExpr 0x1d0e8de5140 <col:29, col:35> 'int' lvalue
+  |   | |-ImplicitCastExpr 0x1d0e8de5110 <col:29> 'int *' <ArrayToPointerDecay>
+  |   | | `-DeclRefExpr 0x1d0e8de50d0 <col:29> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |   | `-ImplicitCastExpr 0x1d0e8de5128 <col:34> 'int' <LValueToRValue>
+  |   |   `-DeclRefExpr 0x1d0e8de50f0 <col:34> 'int' lvalue Var 0x1d0e8de4f60 'i' 'int'
+  |   `-IntegerLiteral 0x1d0e8de5160 <col:39> 'int' 0
+  |-BinaryOperator 0x1d0e8de52f8 <line:18:2, col:15> 'int' lvalue '='
+  | |-ArraySubscriptExpr 0x1d0e8de5240 <col:2, col:8> 'int' lvalue
+  | | |-ImplicitCastExpr 0x1d0e8de5228 <col:2> 'int *' <ArrayToPointerDecay>
+  | | | `-DeclRefExpr 0x1d0e8de51e0 <col:2> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  | | `-IntegerLiteral 0x1d0e8de5200 <col:7> 'int' 0
+  | `-ImplicitCastExpr 0x1d0e8de52e0 <col:12, col:15> 'int' <LValueToRValue>
+  |   `-ArraySubscriptExpr 0x1d0e8de52c0 <col:12, col:15> 'int' lvalue
+  |     |-ImplicitCastExpr 0x1d0e8de52a8 <col:12> 'int *' <ArrayToPointerDecay>
+  |     | `-DeclRefExpr 0x1d0e8de5260 <col:12> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |     `-IntegerLiteral 0x1d0e8de5280 <col:14> 'int' 0
+  |-DeclStmt 0x1d0e8e388f8 <line:19:2, col:23>
+  | `-VarDecl 0x1d0e8de5a50 <col:2, col:22> col:22 used S 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >' callinit
+  |   `-CXXConstructExpr 0x1d0e8e388c0 <col:22> 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >' 'void ()'
+  |-ForStmt 0x1d0e8e7e408 <line:20:2, col:60>
+  | |-DeclStmt 0x1d0e8e389b8 <col:6, col:15>
+  | | `-VarDecl 0x1d0e8e38928 <col:6, col:14> col:10 used i 'int' cinit
+  | |   `-IntegerLiteral 0x1d0e8e38990 <col:14> 'int' 0
+  | |-<<<NULL>>>
+  | |-BinaryOperator 0x1d0e8e38a40 <col:17, col:21> 'bool' '<'
+  | | |-ImplicitCastExpr 0x1d0e8e38a10 <col:17> 'int' <LValueToRValue>
+  | | | `-DeclRefExpr 0x1d0e8e389d0 <col:17> 'int' lvalue Var 0x1d0e8e38928 'i' 'int'
+  | | `-ImplicitCastExpr 0x1d0e8e38a28 <col:21> 'int' <LValueToRValue>
+  | |   `-DeclRefExpr 0x1d0e8e389f0 <col:21> 'int' lvalue Var 0x1d0e8de46a0 'n' 'int'
+  | |-UnaryOperator 0x1d0e8e38a80 <col:24, col:25> 'int' postfix '++'
+  | | `-DeclRefExpr 0x1d0e8e38a60 <col:24> 'int' lvalue Var 0x1d0e8e38928 'i' 'int'
+  | `-ExprWithCleanups 0x1d0e8e7e3f0 <col:29, col:60> 'pair<std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::iterator, bool>':'std::pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >, bool>'
+  |   `-CXXMemberCallExpr 0x1d0e8e6caf0 <col:29, col:60> 'pair<std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::iterator, bool>':'std::pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >, bool>'
+  |     |-MemberExpr 0x1d0e8e6caa8 <col:29, col:31> '<bound member function type>' .insert 0x1d0e8e6b680
+  |     | `-ImplicitCastExpr 0x1d0e8e7e2d8 <col:29> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >' lvalue <UncheckedDerivedToBase (_Tree)>
+  |     |   `-DeclRefExpr 0x1d0e8e38a98 <col:29> 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >' lvalue Var 0x1d0e8de5a50 'S' 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >'
+  |     `-MaterializeTemporaryExpr 0x1d0e8e7e2f8 <col:38, col:59> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> >':'std::pair<int, int>' xvalue
+  |       `-CallExpr 0x1d0e8e6a700 <col:38, col:59> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> >':'std::pair<int, int>'
+  |         |-ImplicitCastExpr 0x1d0e8e6a6e8 <col:38> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (*)(int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' <FunctionToPointerDecay>
+  |         | `-DeclRefExpr 0x1d0e8e3f540 <col:38> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' lvalue Function 0x1d0e8e3e030 'make_pair' 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' (FunctionTemplate 0x1d0e8b0c930 'make_pair')
+  |         |-MaterializeTemporaryExpr 0x1d0e8e6a730 <col:48, col:55> 'int':'int' xvalue
+  |         | `-UnaryOperator 0x1d0e8e38c38 <col:48, col:55> 'int' prefix '-'
+  |         |   `-ImplicitCastExpr 0x1d0e8e38c20 <col:49, col:55> 'int' <LValueToRValue>
+  |         |     `-ArraySubscriptExpr 0x1d0e8e38c00 <col:49, col:55> 'int' lvalue
+  |         |       |-ImplicitCastExpr 0x1d0e8e38bd0 <col:49> 'int *' <ArrayToPointerDecay>
+  |         |       | `-DeclRefExpr 0x1d0e8e38b90 <col:49> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |         |       `-ImplicitCastExpr 0x1d0e8e38be8 <col:54> 'int' <LValueToRValue>
+  |         |         `-DeclRefExpr 0x1d0e8e38bb0 <col:54> 'int' lvalue Var 0x1d0e8e38928 'i' 'int'
+  |         `-DeclRefExpr 0x1d0e8e38c50 <col:58> 'int' lvalue Var 0x1d0e8e38928 'i' 'int'
+  |-WhileStmt 0x1d0e8e84868 <line:21:2, line:44:2>
+  | |-UnaryOperator 0x1d0e8e7e4f8 <line:21:8, col:17> 'bool' prefix '!' cannot overflow
+  | | `-CXXMemberCallExpr 0x1d0e8e7e490 <col:9, col:17> 'bool'
+  | |   `-MemberExpr 0x1d0e8e7e460 <col:9, col:11> '<bound member function type>' .empty 0x1d0e8dff088
+  | |     `-ImplicitCastExpr 0x1d0e8e7e4d8 <col:9> 'const std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >' lvalue <UncheckedDerivedToBase (_Tree)>
+  | |       `-DeclRefExpr 0x1d0e8e7e440 <col:9> 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >' lvalue Var 0x1d0e8de5a50 'S' 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >'
+  | `-CompoundStmt 0x1d0e8e84830 <line:22:2, line:44:2>
+  |   |-DeclStmt 0x1d0e8e7e800 <line:23:3, col:30>
+  |   | `-VarDecl 0x1d0e8e7e528 <col:3, col:24> col:7 used u 'int' cinit
+  |   |   `-ExprWithCleanups 0x1d0e8e7e7e8 <col:11, col:24> 'int':'int'
+  |   |     `-ImplicitCastExpr 0x1d0e8e7e7d0 <col:11, col:24> 'int':'int' <LValueToRValue>
+  |   |       `-MemberExpr 0x1d0e8e7e7a0 <col:11, col:24> 'const int':'const int' lvalue ->second 0x1d0e8e4d588
+  |   |         `-CXXOperatorCallExpr 0x1d0e8e7e770 <col:11, col:19> 'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >::pointer':'const std::_Simple_types<std::pair<int, int> >::value_type *'
+  |   |           |-ImplicitCastExpr 0x1d0e8e7e758 <col:21> 'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >::pointer (*)() const' <FunctionToPointerDecay>
+  |   |           | `-DeclRefExpr 0x1d0e8e7e6d8 <col:21> 'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >::pointer () const' lvalue CXXMethod 0x1d0e8e7c7b8 'operator->' 'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >::pointer () const'
+  |   |           `-ImplicitCastExpr 0x1d0e8e7e6c0 <col:11, col:19> 'const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >' lvalue <NoOp>
+  |   |             `-MaterializeTemporaryExpr 0x1d0e8e7e6a8 <col:11, col:19> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::iterator':'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >' lvalue
+  |   |               `-CXXMemberCallExpr 0x1d0e8e7e640 <col:11, col:19> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::iterator':'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >'
+  |   |                 `-MemberExpr 0x1d0e8e7e610 <col:11, col:13> '<bound member function type>' .begin 0x1d0e8dfdb50
+  |   |                   `-ImplicitCastExpr 0x1d0e8e7e660 <col:11> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >' lvalue <UncheckedDerivedToBase (_Tree)>
+  |   |                     `-DeclRefExpr 0x1d0e8e7e590 <col:11> 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >' lvalue Var 0x1d0e8de5a50 'S' 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >'
+  |   |-ExprWithCleanups 0x1d0e8e7f358 <line:24:3, col:21> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::size_type':'unsigned long long'
+  |   | `-CXXMemberCallExpr 0x1d0e8e7f310 <col:3, col:21> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::size_type':'unsigned long long'
+  |   |   |-MemberExpr 0x1d0e8e7f2e0 <col:3, col:5> '<bound member function type>' .erase 0x1d0e8e02e18
+  |   |   | `-ImplicitCastExpr 0x1d0e8e7f338 <col:3> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >' lvalue <UncheckedDerivedToBase (_Tree)>
+  |   |   |   `-DeclRefExpr 0x1d0e8e7e818 <col:3> 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >' lvalue Var 0x1d0e8de5a50 'S' 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >'
+  |   |   `-CXXOperatorCallExpr 0x1d0e8e7ea60 <col:11, col:20> 'const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >::value_type':'const std::pair<int, int>' lvalue
+  |   |     |-ImplicitCastExpr 0x1d0e8e7ea48 <col:11> 'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >::reference (*)() const' <FunctionToPointerDecay>
+  |   |     | `-DeclRefExpr 0x1d0e8e7e9c8 <col:11> 'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >::reference () const' lvalue CXXMethod 0x1d0e8e7c628 'operator*' 'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >::reference () const'
+  |   |     `-ImplicitCastExpr 0x1d0e8e7e9b0 <col:12, col:20> 'const std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >' lvalue <NoOp>
+  |   |       `-MaterializeTemporaryExpr 0x1d0e8e7e998 <col:12, col:20> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::iterator':'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >' lvalue
+  |   |         `-CXXMemberCallExpr 0x1d0e8e7e958 <col:12, col:20> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::iterator':'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >'
+  |   |           `-MemberExpr 0x1d0e8e7e928 <col:12, col:14> '<bound member function type>' .begin 0x1d0e8dfdb50
+  |   |             `-ImplicitCastExpr 0x1d0e8e7e978 <col:12> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >' lvalue <UncheckedDerivedToBase (_Tree)>
+  |   |               `-DeclRefExpr 0x1d0e8e7e8a8 <col:12> 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >' lvalue Var 0x1d0e8de5a50 'S' 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >'
+  |   |-IfStmt 0x1d0e8e7f588 <line:25:3, col:34>
+  |   | |-BinaryOperator 0x1d0e8e7f518 <col:6, col:24> 'bool' '>='
+  |   | | |-BinaryOperator 0x1d0e8e7f4c0 <col:6, col:19> 'int' '+'
+  |   | | | |-ImplicitCastExpr 0x1d0e8e7f490 <col:6, col:9> 'int' <LValueToRValue>
+  |   | | | | `-ArraySubscriptExpr 0x1d0e8e7f3e0 <col:6, col:9> 'int' lvalue
+  |   | | | |   |-ImplicitCastExpr 0x1d0e8e7f3b0 <col:6> 'int *' <ArrayToPointerDecay>
+  |   | | | |   | `-DeclRefExpr 0x1d0e8e7f370 <col:6> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |   | | | |   `-ImplicitCastExpr 0x1d0e8e7f3c8 <col:8> 'int' <LValueToRValue>
+  |   | | | |     `-DeclRefExpr 0x1d0e8e7f390 <col:8> 'int' lvalue Var 0x1d0e8e7e528 'u' 'int'
+  |   | | | `-ImplicitCastExpr 0x1d0e8e7f4a8 <col:13, col:19> 'int' <LValueToRValue>
+  |   | | |   `-ArraySubscriptExpr 0x1d0e8e7f470 <col:13, col:19> 'int' lvalue
+  |   | | |     |-ImplicitCastExpr 0x1d0e8e7f440 <col:13> 'int *' <ArrayToPointerDecay>
+  |   | | |     | `-DeclRefExpr 0x1d0e8e7f400 <col:13> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |   | | |     `-ImplicitCastExpr 0x1d0e8e7f458 <col:18> 'int' <LValueToRValue>
+  |   | | |       `-DeclRefExpr 0x1d0e8e7f420 <col:18> 'int' lvalue Var 0x1d0e8e7e528 'u' 'int'
+  |   | | `-ImplicitCastExpr 0x1d0e8e7f500 <col:24> 'int' <LValueToRValue>
+  |   | |   `-DeclRefExpr 0x1d0e8e7f4e0 <col:24> 'int' lvalue Var 0x1d0e8de4720 'D' 'int'
+  |   | `-ReturnStmt 0x1d0e8e7f578 <col:27, col:34>
+  |   |   `-ImplicitCastExpr 0x1d0e8e7f560 <col:34> 'bool' <IntegralToBoolean>
+  |   |     `-IntegerLiteral 0x1d0e8e7f538 <col:34> 'int' 1
+  |   |-ForStmt 0x1d0e8e82258 <line:26:3, line:34:3>
+  |   | |-DeclStmt 0x1d0e8e7f6a0 <line:26:7, col:18>
+  |   | | `-VarDecl 0x1d0e8e7f5b8 <col:7, col:17> col:11 used i 'int' cinit
+  |   | |   `-BinaryOperator 0x1d0e8e7f680 <col:15, col:17> 'int' '-'
+  |   | |     |-ImplicitCastExpr 0x1d0e8e7f668 <col:15> 'int' <LValueToRValue>
+  |   | |     | `-DeclRefExpr 0x1d0e8e7f620 <col:15> 'int' lvalue Var 0x1d0e8e7e528 'u' 'int'
+  |   | |     `-IntegerLiteral 0x1d0e8e7f640 <col:17> 'int' 1
+  |   | |-<<<NULL>>>
+  |   | |-BinaryOperator 0x1d0e8e7f970 <col:20, col:51> 'bool' '&&'
+  |   | | |-BinaryOperator 0x1d0e8e7f718 <col:20, col:25> 'bool' '>='
+  |   | | | |-ImplicitCastExpr 0x1d0e8e7f700 <col:20> 'int' <LValueToRValue>
+  |   | | | | `-DeclRefExpr 0x1d0e8e7f6b8 <col:20> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   | | | `-IntegerLiteral 0x1d0e8e7f6d8 <col:25> 'int' 0
+  |   | | `-BinaryOperator 0x1d0e8e7f950 <col:30, col:51> 'bool' '<='
+  |   | |   |-BinaryOperator 0x1d0e8e7f888 <col:30, col:40> 'int' '-'
+  |   | |   | |-ImplicitCastExpr 0x1d0e8e7f858 <col:30, col:33> 'int' <LValueToRValue>
+  |   | |   | | `-ArraySubscriptExpr 0x1d0e8e7f7a8 <col:30, col:33> 'int' lvalue
+  |   | |   | |   |-ImplicitCastExpr 0x1d0e8e7f778 <col:30> 'int *' <ArrayToPointerDecay>
+  |   | |   | |   | `-DeclRefExpr 0x1d0e8e7f738 <col:30> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |   | |   | |   `-ImplicitCastExpr 0x1d0e8e7f790 <col:32> 'int' <LValueToRValue>
+  |   | |   | |     `-DeclRefExpr 0x1d0e8e7f758 <col:32> 'int' lvalue Var 0x1d0e8e7e528 'u' 'int'
+  |   | |   | `-ImplicitCastExpr 0x1d0e8e7f870 <col:37, col:40> 'int' <LValueToRValue>
+  |   | |   |   `-ArraySubscriptExpr 0x1d0e8e7f838 <col:37, col:40> 'int' lvalue
+  |   | |   |     |-ImplicitCastExpr 0x1d0e8e7f808 <col:37> 'int *' <ArrayToPointerDecay>
+  |   | |   |     | `-DeclRefExpr 0x1d0e8e7f7c8 <col:37> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |   | |   |     `-ImplicitCastExpr 0x1d0e8e7f820 <col:39> 'int' <LValueToRValue>
+  |   | |   |       `-DeclRefExpr 0x1d0e8e7f7e8 <col:39> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   | |   `-ImplicitCastExpr 0x1d0e8e7f938 <col:45, col:51> 'int' <LValueToRValue>
+  |   | |     `-ArraySubscriptExpr 0x1d0e8e7f918 <col:45, col:51> 'int' lvalue
+  |   | |       |-ImplicitCastExpr 0x1d0e8e7f8e8 <col:45> 'int *' <ArrayToPointerDecay>
+  |   | |       | `-DeclRefExpr 0x1d0e8e7f8a8 <col:45> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |   | |       `-ImplicitCastExpr 0x1d0e8e7f900 <col:50> 'int' <LValueToRValue>
+  |   | |         `-DeclRefExpr 0x1d0e8e7f8c8 <col:50> 'int' lvalue Var 0x1d0e8e7e528 'u' 'int'
+  |   | |-UnaryOperator 0x1d0e8e7f9b0 <col:54, col:55> 'int' postfix '--'
+  |   | | `-DeclRefExpr 0x1d0e8e7f990 <col:54> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   | `-CompoundStmt 0x1d0e8e82240 <line:27:3, line:34:3>
+  |   |   `-IfStmt 0x1d0e8e82228 <line:28:4, line:33:4>
+  |   |     |-BinaryOperator 0x1d0e8e7fd70 <line:28:7, col:45> 'bool' '&&'
+  |   |     | |-BinaryOperator 0x1d0e8e7fbe0 <col:7, col:27> 'bool' '<'
+  |   |     | | |-ImplicitCastExpr 0x1d0e8e7fbc8 <col:7, col:13> 'int' <LValueToRValue>
+  |   |     | | | `-ArraySubscriptExpr 0x1d0e8e7fa38 <col:7, col:13> 'int' lvalue
+  |   |     | | |   |-ImplicitCastExpr 0x1d0e8e7fa08 <col:7> 'int *' <ArrayToPointerDecay>
+  |   |     | | |   | `-DeclRefExpr 0x1d0e8e7f9c8 <col:7> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |   |     | | |   `-ImplicitCastExpr 0x1d0e8e7fa20 <col:12> 'int' <LValueToRValue>
+  |   |     | | |     `-DeclRefExpr 0x1d0e8e7f9e8 <col:12> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   |     | | `-BinaryOperator 0x1d0e8e7fba8 <col:17, col:27> 'int' '-'
+  |   |     | |   |-ImplicitCastExpr 0x1d0e8e7fb78 <col:17, col:20> 'int' <LValueToRValue>
+  |   |     | |   | `-ArraySubscriptExpr 0x1d0e8e7fac8 <col:17, col:20> 'int' lvalue
+  |   |     | |   |   |-ImplicitCastExpr 0x1d0e8e7fa98 <col:17> 'int *' <ArrayToPointerDecay>
+  |   |     | |   |   | `-DeclRefExpr 0x1d0e8e7fa58 <col:17> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |   |     | |   |   `-ImplicitCastExpr 0x1d0e8e7fab0 <col:19> 'int' <LValueToRValue>
+  |   |     | |   |     `-DeclRefExpr 0x1d0e8e7fa78 <col:19> 'int' lvalue Var 0x1d0e8e7e528 'u' 'int'
+  |   |     | |   `-ImplicitCastExpr 0x1d0e8e7fb90 <col:24, col:27> 'int' <LValueToRValue>
+  |   |     | |     `-ArraySubscriptExpr 0x1d0e8e7fb58 <col:24, col:27> 'int' lvalue
+  |   |     | |       |-ImplicitCastExpr 0x1d0e8e7fb28 <col:24> 'int *' <ArrayToPointerDecay>
+  |   |     | |       | `-DeclRefExpr 0x1d0e8e7fae8 <col:24> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |   |     | |       `-ImplicitCastExpr 0x1d0e8e7fb40 <col:26> 'int' <LValueToRValue>
+  |   |     | |         `-DeclRefExpr 0x1d0e8e7fb08 <col:26> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   |     | `-BinaryOperator 0x1d0e8e7fd50 <col:32, col:45> 'bool' '<'
+  |   |     |   |-ImplicitCastExpr 0x1d0e8e7fd20 <col:32, col:38> 'int' <LValueToRValue>
+  |   |     |   | `-ArraySubscriptExpr 0x1d0e8e7fc70 <col:32, col:38> 'int' lvalue
+  |   |     |   |   |-ImplicitCastExpr 0x1d0e8e7fc40 <col:32> 'int *' <ArrayToPointerDecay>
+  |   |     |   |   | `-DeclRefExpr 0x1d0e8e7fc00 <col:32> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |   |     |   |   `-ImplicitCastExpr 0x1d0e8e7fc58 <col:37> 'int' <LValueToRValue>
+  |   |     |   |     `-DeclRefExpr 0x1d0e8e7fc20 <col:37> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   |     |   `-ImplicitCastExpr 0x1d0e8e7fd38 <col:42, col:45> 'int' <LValueToRValue>
+  |   |     |     `-ArraySubscriptExpr 0x1d0e8e7fd00 <col:42, col:45> 'int' lvalue
+  |   |     |       |-ImplicitCastExpr 0x1d0e8e7fcd0 <col:42> 'int *' <ArrayToPointerDecay>
+  |   |     |       | `-DeclRefExpr 0x1d0e8e7fc90 <col:42> 'int [10101]' lvalue Var 0x1d0e8de4468 'l' 'int [10101]'
+  |   |     |       `-ImplicitCastExpr 0x1d0e8e7fce8 <col:44> 'int' <LValueToRValue>
+  |   |     |         `-DeclRefExpr 0x1d0e8e7fcb0 <col:44> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   |     `-CompoundStmt 0x1d0e8e82200 <line:29:4, line:33:4>
+  |   |       |-ExprWithCleanups 0x1d0e8e80448 <line:30:5, col:35> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::size_type':'unsigned long long'
+  |   |       | `-CXXMemberCallExpr 0x1d0e8e803d0 <col:5, col:35> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::size_type':'unsigned long long'
+  |   |       |   |-MemberExpr 0x1d0e8e803a0 <col:5, col:7> '<bound member function type>' .erase 0x1d0e8e02e18
+  |   |       |   | `-ImplicitCastExpr 0x1d0e8e803f8 <col:5> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >' lvalue <UncheckedDerivedToBase (_Tree)>
+  |   |       |   |   `-DeclRefExpr 0x1d0e8e7fd90 <col:5> 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >' lvalue Var 0x1d0e8de5a50 'S' 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >'
+  |   |       |   `-MaterializeTemporaryExpr 0x1d0e8e80430 <col:13, col:34> 'const pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> >':'const std::pair<int, int>' lvalue
+  |   |       |     `-ImplicitCastExpr 0x1d0e8e80418 <col:13, col:34> 'const pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> >':'const std::pair<int, int>' <NoOp>
+  |   |       |       `-CallExpr 0x1d0e8e7fff8 <col:13, col:34> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> >':'std::pair<int, int>'
+  |   |       |         |-ImplicitCastExpr 0x1d0e8e7ffe0 <col:13> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (*)(int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' <FunctionToPointerDecay>
+  |   |       |         | `-DeclRefExpr 0x1d0e8e7ffb8 <col:13> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' lvalue Function 0x1d0e8e3e030 'make_pair' 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' (FunctionTemplate 0x1d0e8b0c930 'make_pair')
+  |   |       |         |-MaterializeTemporaryExpr 0x1d0e8e80028 <col:23, col:30> 'int':'int' xvalue
+  |   |       |         | `-UnaryOperator 0x1d0e8e7ff10 <col:23, col:30> 'int' prefix '-'
+  |   |       |         |   `-ImplicitCastExpr 0x1d0e8e7fef8 <col:24, col:30> 'int' <LValueToRValue>
+  |   |       |         |     `-ArraySubscriptExpr 0x1d0e8e7fed8 <col:24, col:30> 'int' lvalue
+  |   |       |         |       |-ImplicitCastExpr 0x1d0e8e7fea8 <col:24> 'int *' <ArrayToPointerDecay>
+  |   |       |         |       | `-DeclRefExpr 0x1d0e8e7fe68 <col:24> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |   |       |         |       `-ImplicitCastExpr 0x1d0e8e7fec0 <col:29> 'int' <LValueToRValue>
+  |   |       |         |         `-DeclRefExpr 0x1d0e8e7fe88 <col:29> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   |       |         `-DeclRefExpr 0x1d0e8e7ff28 <col:33> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   |       |-ExprWithCleanups 0x1d0e8e81018 <line:31:5, col:36> 'int' lvalue
+  |   |       | `-BinaryOperator 0x1d0e8e80ff8 <col:5, col:36> 'int' lvalue '='
+  |   |       |   |-ArraySubscriptExpr 0x1d0e8e804d0 <col:5, col:11> 'int' lvalue
+  |   |       |   | |-ImplicitCastExpr 0x1d0e8e804a0 <col:5> 'int *' <ArrayToPointerDecay>
+  |   |       |   | | `-DeclRefExpr 0x1d0e8e80460 <col:5> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |   |       |   | `-ImplicitCastExpr 0x1d0e8e804b8 <col:10> 'int' <LValueToRValue>
+  |   |       |   |   `-DeclRefExpr 0x1d0e8e80480 <col:10> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   |       |   `-ImplicitCastExpr 0x1d0e8e80fe0 <col:15, col:36> 'int':'int' <LValueToRValue>
+  |   |       |     `-CallExpr 0x1d0e8e80f80 <col:15, col:36> 'const int':'const int' lvalue
+  |   |       |       |-ImplicitCastExpr 0x1d0e8e80f68 <col:15> 'const int &(*)(const int &, const int &) noexcept(noexcept(_Right < _Left))' <FunctionToPointerDecay>
+  |   |       |       | `-DeclRefExpr 0x1d0e8e80d40 <col:15> 'const int &(const int &, const int &) noexcept(noexcept(_Right < _Left))' lvalue Function 0x1d0e8e80a48 'min' 'const int &(const int &, const int &) noexcept(noexcept(_Right < _Left))' (FunctionTemplate 0x1d0e8d6c368 'min')
+  |   |       |       |-MaterializeTemporaryExpr 0x1d0e8e80fb0 <col:19, col:29> 'const int':'const int' lvalue
+  |   |       |       | `-BinaryOperator 0x1d0e8e806a0 <col:19, col:29> 'int' '-'
+  |   |       |       |   |-ImplicitCastExpr 0x1d0e8e80670 <col:19, col:22> 'int' <LValueToRValue>
+  |   |       |       |   | `-ArraySubscriptExpr 0x1d0e8e805c0 <col:19, col:22> 'int' lvalue
+  |   |       |       |   |   |-ImplicitCastExpr 0x1d0e8e80590 <col:19> 'int *' <ArrayToPointerDecay>
+  |   |       |       |   |   | `-DeclRefExpr 0x1d0e8e80550 <col:19> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |   |       |       |   |   `-ImplicitCastExpr 0x1d0e8e805a8 <col:21> 'int' <LValueToRValue>
+  |   |       |       |   |     `-DeclRefExpr 0x1d0e8e80570 <col:21> 'int' lvalue Var 0x1d0e8e7e528 'u' 'int'
+  |   |       |       |   `-ImplicitCastExpr 0x1d0e8e80688 <col:26, col:29> 'int' <LValueToRValue>
+  |   |       |       |     `-ArraySubscriptExpr 0x1d0e8e80650 <col:26, col:29> 'int' lvalue
+  |   |       |       |       |-ImplicitCastExpr 0x1d0e8e80620 <col:26> 'int *' <ArrayToPointerDecay>
+  |   |       |       |       | `-DeclRefExpr 0x1d0e8e805e0 <col:26> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |   |       |       |       `-ImplicitCastExpr 0x1d0e8e80638 <col:28> 'int' <LValueToRValue>
+  |   |       |       |         `-DeclRefExpr 0x1d0e8e80600 <col:28> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   |       |       `-ImplicitCastExpr 0x1d0e8e80fc8 <col:32, col:35> 'const int' lvalue <NoOp>
+  |   |       |         `-ArraySubscriptExpr 0x1d0e8e80730 <col:32, col:35> 'int' lvalue
+  |   |       |           |-ImplicitCastExpr 0x1d0e8e80700 <col:32> 'int *' <ArrayToPointerDecay>
+  |   |       |           | `-DeclRefExpr 0x1d0e8e806c0 <col:32> 'int [10101]' lvalue Var 0x1d0e8de4468 'l' 'int [10101]'
+  |   |       |           `-ImplicitCastExpr 0x1d0e8e80718 <col:34> 'int' <LValueToRValue>
+  |   |       |             `-DeclRefExpr 0x1d0e8e806e0 <col:34> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   |       `-ExprWithCleanups 0x1d0e8e821e8 <line:32:5, col:36> 'pair<std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::iterator, bool>':'std::pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >, bool>'
+  |   |         `-CXXMemberCallExpr 0x1d0e8e82188 <col:5, col:36> 'pair<std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::iterator, bool>':'std::pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >, bool>'
+  |   |           |-MemberExpr 0x1d0e8e82140 <col:5, col:7> '<bound member function type>' .insert 0x1d0e8e6b680
+  |   |           | `-ImplicitCastExpr 0x1d0e8e821b0 <col:5> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >' lvalue <UncheckedDerivedToBase (_Tree)>
+  |   |           |   `-DeclRefExpr 0x1d0e8e81030 <col:5> 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >' lvalue Var 0x1d0e8de5a50 'S' 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >'
+  |   |           `-MaterializeTemporaryExpr 0x1d0e8e821d0 <col:14, col:35> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> >':'std::pair<int, int>' xvalue
+  |   |             `-CallExpr 0x1d0e8e812b8 <col:14, col:35> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> >':'std::pair<int, int>'
+  |   |               |-ImplicitCastExpr 0x1d0e8e812a0 <col:14> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (*)(int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' <FunctionToPointerDecay>
+  |   |               | `-DeclRefExpr 0x1d0e8e81278 <col:14> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' lvalue Function 0x1d0e8e3e030 'make_pair' 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' (FunctionTemplate 0x1d0e8b0c930 'make_pair')
+  |   |               |-MaterializeTemporaryExpr 0x1d0e8e812e8 <col:24, col:31> 'int':'int' xvalue
+  |   |               | `-UnaryOperator 0x1d0e8e811d0 <col:24, col:31> 'int' prefix '-'
+  |   |               |   `-ImplicitCastExpr 0x1d0e8e811b8 <col:25, col:31> 'int' <LValueToRValue>
+  |   |               |     `-ArraySubscriptExpr 0x1d0e8e81198 <col:25, col:31> 'int' lvalue
+  |   |               |       |-ImplicitCastExpr 0x1d0e8e81168 <col:25> 'int *' <ArrayToPointerDecay>
+  |   |               |       | `-DeclRefExpr 0x1d0e8e81128 <col:25> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |   |               |       `-ImplicitCastExpr 0x1d0e8e81180 <col:30> 'int' <LValueToRValue>
+  |   |               |         `-DeclRefExpr 0x1d0e8e81148 <col:30> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   |               `-DeclRefExpr 0x1d0e8e811e8 <col:34> 'int' lvalue Var 0x1d0e8e7f5b8 'i' 'int'
+  |   `-ForStmt 0x1d0e8e847f8 <line:35:3, line:43:3>
+  |     |-DeclStmt 0x1d0e8e82390 <line:35:7, col:18>
+  |     | `-VarDecl 0x1d0e8e822a8 <col:7, col:17> col:11 used i 'int' cinit
+  |     |   `-BinaryOperator 0x1d0e8e82370 <col:15, col:17> 'int' '+'
+  |     |     |-ImplicitCastExpr 0x1d0e8e82358 <col:15> 'int' <LValueToRValue>
+  |     |     | `-DeclRefExpr 0x1d0e8e82310 <col:15> 'int' lvalue Var 0x1d0e8e7e528 'u' 'int'
+  |     |     `-IntegerLiteral 0x1d0e8e82330 <col:17> 'int' 1
+  |     |-<<<NULL>>>
+  |     |-BinaryOperator 0x1d0e8e82670 <col:20, col:50> 'bool' '&&'
+  |     | |-BinaryOperator 0x1d0e8e82418 <col:20, col:24> 'bool' '<'
+  |     | | |-ImplicitCastExpr 0x1d0e8e823e8 <col:20> 'int' <LValueToRValue>
+  |     | | | `-DeclRefExpr 0x1d0e8e823a8 <col:20> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  |     | | `-ImplicitCastExpr 0x1d0e8e82400 <col:24> 'int' <LValueToRValue>
+  |     | |   `-DeclRefExpr 0x1d0e8e823c8 <col:24> 'int' lvalue Var 0x1d0e8de46a0 'n' 'int'
+  |     | `-BinaryOperator 0x1d0e8e82650 <col:29, col:50> 'bool' '<='
+  |     |   |-BinaryOperator 0x1d0e8e82588 <col:29, col:39> 'int' '-'
+  |     |   | |-ImplicitCastExpr 0x1d0e8e82558 <col:29, col:32> 'int' <LValueToRValue>
+  |     |   | | `-ArraySubscriptExpr 0x1d0e8e824a8 <col:29, col:32> 'int' lvalue
+  |     |   | |   |-ImplicitCastExpr 0x1d0e8e82478 <col:29> 'int *' <ArrayToPointerDecay>
+  |     |   | |   | `-DeclRefExpr 0x1d0e8e82438 <col:29> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |     |   | |   `-ImplicitCastExpr 0x1d0e8e82490 <col:31> 'int' <LValueToRValue>
+  |     |   | |     `-DeclRefExpr 0x1d0e8e82458 <col:31> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  |     |   | `-ImplicitCastExpr 0x1d0e8e82570 <col:36, col:39> 'int' <LValueToRValue>
+  |     |   |   `-ArraySubscriptExpr 0x1d0e8e82538 <col:36, col:39> 'int' lvalue
+  |     |   |     |-ImplicitCastExpr 0x1d0e8e82508 <col:36> 'int *' <ArrayToPointerDecay>
+  |     |   |     | `-DeclRefExpr 0x1d0e8e824c8 <col:36> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |     |   |     `-ImplicitCastExpr 0x1d0e8e82520 <col:38> 'int' <LValueToRValue>
+  |     |   |       `-DeclRefExpr 0x1d0e8e824e8 <col:38> 'int' lvalue Var 0x1d0e8e7e528 'u' 'int'
+  |     |   `-ImplicitCastExpr 0x1d0e8e82638 <col:44, col:50> 'int' <LValueToRValue>
+  |     |     `-ArraySubscriptExpr 0x1d0e8e82618 <col:44, col:50> 'int' lvalue
+  |     |       |-ImplicitCastExpr 0x1d0e8e825e8 <col:44> 'int *' <ArrayToPointerDecay>
+  |     |       | `-DeclRefExpr 0x1d0e8e825a8 <col:44> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |     |       `-ImplicitCastExpr 0x1d0e8e82600 <col:49> 'int' <LValueToRValue>
+  |     |         `-DeclRefExpr 0x1d0e8e825c8 <col:49> 'int' lvalue Var 0x1d0e8e7e528 'u' 'int'
+  |     |-UnaryOperator 0x1d0e8e826b0 <col:53, col:54> 'int' postfix '++'
+  |     | `-DeclRefExpr 0x1d0e8e82690 <col:53> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  |     `-CompoundStmt 0x1d0e8e847e0 <line:36:3, line:43:3>
+  |       `-IfStmt 0x1d0e8e847c8 <line:37:4, line:42:4>
+  |         |-BinaryOperator 0x1d0e8e82a70 <line:37:7, col:45> 'bool' '&&'
+  |         | |-BinaryOperator 0x1d0e8e828e0 <col:7, col:27> 'bool' '<'
+  |         | | |-ImplicitCastExpr 0x1d0e8e828c8 <col:7, col:13> 'int' <LValueToRValue>
+  |         | | | `-ArraySubscriptExpr 0x1d0e8e82738 <col:7, col:13> 'int' lvalue
+  |         | | |   |-ImplicitCastExpr 0x1d0e8e82708 <col:7> 'int *' <ArrayToPointerDecay>
+  |         | | |   | `-DeclRefExpr 0x1d0e8e826c8 <col:7> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |         | | |   `-ImplicitCastExpr 0x1d0e8e82720 <col:12> 'int' <LValueToRValue>
+  |         | | |     `-DeclRefExpr 0x1d0e8e826e8 <col:12> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  |         | | `-BinaryOperator 0x1d0e8e828a8 <col:17, col:27> 'int' '-'
+  |         | |   |-ImplicitCastExpr 0x1d0e8e82878 <col:17, col:20> 'int' <LValueToRValue>
+  |         | |   | `-ArraySubscriptExpr 0x1d0e8e827c8 <col:17, col:20> 'int' lvalue
+  |         | |   |   |-ImplicitCastExpr 0x1d0e8e82798 <col:17> 'int *' <ArrayToPointerDecay>
+  |         | |   |   | `-DeclRefExpr 0x1d0e8e82758 <col:17> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |         | |   |   `-ImplicitCastExpr 0x1d0e8e827b0 <col:19> 'int' <LValueToRValue>
+  |         | |   |     `-DeclRefExpr 0x1d0e8e82778 <col:19> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  |         | |   `-ImplicitCastExpr 0x1d0e8e82890 <col:24, col:27> 'int' <LValueToRValue>
+  |         | |     `-ArraySubscriptExpr 0x1d0e8e82858 <col:24, col:27> 'int' lvalue
+  |         | |       |-ImplicitCastExpr 0x1d0e8e82828 <col:24> 'int *' <ArrayToPointerDecay>
+  |         | |       | `-DeclRefExpr 0x1d0e8e827e8 <col:24> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |         | |       `-ImplicitCastExpr 0x1d0e8e82840 <col:26> 'int' <LValueToRValue>
+  |         | |         `-DeclRefExpr 0x1d0e8e82808 <col:26> 'int' lvalue Var 0x1d0e8e7e528 'u' 'int'
+  |         | `-BinaryOperator 0x1d0e8e82a50 <col:32, col:45> 'bool' '<'
+  |         |   |-ImplicitCastExpr 0x1d0e8e82a20 <col:32, col:38> 'int' <LValueToRValue>
+  |         |   | `-ArraySubscriptExpr 0x1d0e8e82970 <col:32, col:38> 'int' lvalue
+  |         |   |   |-ImplicitCastExpr 0x1d0e8e82940 <col:32> 'int *' <ArrayToPointerDecay>
+  |         |   |   | `-DeclRefExpr 0x1d0e8e82900 <col:32> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |         |   |   `-ImplicitCastExpr 0x1d0e8e82958 <col:37> 'int' <LValueToRValue>
+  |         |   |     `-DeclRefExpr 0x1d0e8e82920 <col:37> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  |         |   `-ImplicitCastExpr 0x1d0e8e82a38 <col:42, col:45> 'int' <LValueToRValue>
+  |         |     `-ArraySubscriptExpr 0x1d0e8e82a00 <col:42, col:45> 'int' lvalue
+  |         |       |-ImplicitCastExpr 0x1d0e8e829d0 <col:42> 'int *' <ArrayToPointerDecay>
+  |         |       | `-DeclRefExpr 0x1d0e8e82990 <col:42> 'int [10101]' lvalue Var 0x1d0e8de4468 'l' 'int [10101]'
+  |         |       `-ImplicitCastExpr 0x1d0e8e829e8 <col:44> 'int' <LValueToRValue>
+  |         |         `-DeclRefExpr 0x1d0e8e829b0 <col:44> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  |         `-CompoundStmt 0x1d0e8e847a0 <line:38:4, line:42:4>
+  |           |-ExprWithCleanups 0x1d0e8e83170 <line:39:5, col:35> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::size_type':'unsigned long long'
+  |           | `-CXXMemberCallExpr 0x1d0e8e830f8 <col:5, col:35> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::size_type':'unsigned long long'
+  |           |   |-MemberExpr 0x1d0e8e830c8 <col:5, col:7> '<bound member function type>' .erase 0x1d0e8e02e18
+  |           |   | `-ImplicitCastExpr 0x1d0e8e83120 <col:5> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >' lvalue <UncheckedDerivedToBase (_Tree)>
+  |           |   |   `-DeclRefExpr 0x1d0e8e82a90 <col:5> 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >' lvalue Var 0x1d0e8de5a50 'S' 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >'
+  |           |   `-MaterializeTemporaryExpr 0x1d0e8e83158 <col:13, col:34> 'const pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> >':'const std::pair<int, int>' lvalue
+  |           |     `-ImplicitCastExpr 0x1d0e8e83140 <col:13, col:34> 'const pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> >':'const std::pair<int, int>' <NoOp>
+  |           |       `-CallExpr 0x1d0e8e82cf8 <col:13, col:34> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> >':'std::pair<int, int>'
+  |           |         |-ImplicitCastExpr 0x1d0e8e82ce0 <col:13> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (*)(int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' <FunctionToPointerDecay>
+  |           |         | `-DeclRefExpr 0x1d0e8e82cb8 <col:13> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' lvalue Function 0x1d0e8e3e030 'make_pair' 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' (FunctionTemplate 0x1d0e8b0c930 'make_pair')
+  |           |         |-MaterializeTemporaryExpr 0x1d0e8e82d28 <col:23, col:30> 'int':'int' xvalue
+  |           |         | `-UnaryOperator 0x1d0e8e82c10 <col:23, col:30> 'int' prefix '-'
+  |           |         |   `-ImplicitCastExpr 0x1d0e8e82bf8 <col:24, col:30> 'int' <LValueToRValue>
+  |           |         |     `-ArraySubscriptExpr 0x1d0e8e82bd8 <col:24, col:30> 'int' lvalue
+  |           |         |       |-ImplicitCastExpr 0x1d0e8e82ba8 <col:24> 'int *' <ArrayToPointerDecay>
+  |           |         |       | `-DeclRefExpr 0x1d0e8e82b68 <col:24> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |           |         |       `-ImplicitCastExpr 0x1d0e8e82bc0 <col:29> 'int' <LValueToRValue>
+  |           |         |         `-DeclRefExpr 0x1d0e8e82b88 <col:29> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  |           |         `-DeclRefExpr 0x1d0e8e82c28 <col:33> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  |           |-ExprWithCleanups 0x1d0e8e835c0 <line:40:5, col:36> 'int' lvalue
+  |           | `-BinaryOperator 0x1d0e8e835a0 <col:5, col:36> 'int' lvalue '='
+  |           |   |-ArraySubscriptExpr 0x1d0e8e831f8 <col:5, col:11> 'int' lvalue
+  |           |   | |-ImplicitCastExpr 0x1d0e8e831c8 <col:5> 'int *' <ArrayToPointerDecay>
+  |           |   | | `-DeclRefExpr 0x1d0e8e83188 <col:5> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |           |   | `-ImplicitCastExpr 0x1d0e8e831e0 <col:10> 'int' <LValueToRValue>
+  |           |   |   `-DeclRefExpr 0x1d0e8e831a8 <col:10> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  |           |   `-ImplicitCastExpr 0x1d0e8e83588 <col:15, col:36> 'int':'int' <LValueToRValue>
+  |           |     `-CallExpr 0x1d0e8e83528 <col:15, col:36> 'const int':'const int' lvalue
+  |           |       |-ImplicitCastExpr 0x1d0e8e83510 <col:15> 'const int &(*)(const int &, const int &) noexcept(noexcept(_Right < _Left))' <FunctionToPointerDecay>
+  |           |       | `-DeclRefExpr 0x1d0e8e834e8 <col:15> 'const int &(const int &, const int &) noexcept(noexcept(_Right < _Left))' lvalue Function 0x1d0e8e80a48 'min' 'const int &(const int &, const int &) noexcept(noexcept(_Right < _Left))' (FunctionTemplate 0x1d0e8d6c368 'min')
+  |           |       |-MaterializeTemporaryExpr 0x1d0e8e83558 <col:19, col:29> 'const int':'const int' lvalue
+  |           |       | `-BinaryOperator 0x1d0e8e833c8 <col:19, col:29> 'int' '-'
+  |           |       |   |-ImplicitCastExpr 0x1d0e8e83398 <col:19, col:22> 'int' <LValueToRValue>
+  |           |       |   | `-ArraySubscriptExpr 0x1d0e8e832e8 <col:19, col:22> 'int' lvalue
+  |           |       |   |   |-ImplicitCastExpr 0x1d0e8e832b8 <col:19> 'int *' <ArrayToPointerDecay>
+  |           |       |   |   | `-DeclRefExpr 0x1d0e8e83278 <col:19> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |           |       |   |   `-ImplicitCastExpr 0x1d0e8e832d0 <col:21> 'int' <LValueToRValue>
+  |           |       |   |     `-DeclRefExpr 0x1d0e8e83298 <col:21> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  |           |       |   `-ImplicitCastExpr 0x1d0e8e833b0 <col:26, col:29> 'int' <LValueToRValue>
+  |           |       |     `-ArraySubscriptExpr 0x1d0e8e83378 <col:26, col:29> 'int' lvalue
+  |           |       |       |-ImplicitCastExpr 0x1d0e8e83348 <col:26> 'int *' <ArrayToPointerDecay>
+  |           |       |       | `-DeclRefExpr 0x1d0e8e83308 <col:26> 'int [10101]' lvalue Var 0x1d0e8de4390 'd' 'int [10101]'
+  |           |       |       `-ImplicitCastExpr 0x1d0e8e83360 <col:28> 'int' <LValueToRValue>
+  |           |       |         `-DeclRefExpr 0x1d0e8e83328 <col:28> 'int' lvalue Var 0x1d0e8e7e528 'u' 'int'
+  |           |       `-ImplicitCastExpr 0x1d0e8e83570 <col:32, col:35> 'const int' lvalue <NoOp>
+  |           |         `-ArraySubscriptExpr 0x1d0e8e83458 <col:32, col:35> 'int' lvalue
+  |           |           |-ImplicitCastExpr 0x1d0e8e83428 <col:32> 'int *' <ArrayToPointerDecay>
+  |           |           | `-DeclRefExpr 0x1d0e8e833e8 <col:32> 'int [10101]' lvalue Var 0x1d0e8de4468 'l' 'int [10101]'
+  |           |           `-ImplicitCastExpr 0x1d0e8e83440 <col:34> 'int' <LValueToRValue>
+  |           |             `-DeclRefExpr 0x1d0e8e83408 <col:34> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  |           `-ExprWithCleanups 0x1d0e8e84788 <line:41:5, col:36> 'pair<std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::iterator, bool>':'std::pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >, bool>'
+  |             `-CXXMemberCallExpr 0x1d0e8e84728 <col:5, col:36> 'pair<std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >::iterator, bool>':'std::pair<std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<int, int> > > >, bool>'
+  |               |-MemberExpr 0x1d0e8e846e0 <col:5, col:7> '<bound member function type>' .insert 0x1d0e8e6b680
+  |               | `-ImplicitCastExpr 0x1d0e8e84750 <col:5> 'std::_Tree<std::_Tset_traits<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> >, false> >' lvalue <UncheckedDerivedToBase (_Tree)>
+  |               |   `-DeclRefExpr 0x1d0e8e835d8 <col:5> 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >' lvalue Var 0x1d0e8de5a50 'S' 'set<pair<int, int> >':'std::set<std::pair<int, int>, std::less<std::pair<int, int> >, std::allocator<std::pair<int, int> > >'
+  |               `-MaterializeTemporaryExpr 0x1d0e8e84770 <col:14, col:35> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> >':'std::pair<int, int>' xvalue
+  |                 `-CallExpr 0x1d0e8e83860 <col:14, col:35> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> >':'std::pair<int, int>'
+  |                   |-ImplicitCastExpr 0x1d0e8e83848 <col:14> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (*)(int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' <FunctionToPointerDecay>
+  |                   | `-DeclRefExpr 0x1d0e8e83820 <col:14> 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' lvalue Function 0x1d0e8e3e030 'make_pair' 'pair<_Unrefwrap_t<int>, _Unrefwrap_t<int &> > (int &&, int &) noexcept(is_nothrow_constructible_v<_Unrefwrap_t<int>, int> && is_nothrow_constructible_v<_Unrefwrap_t<int &>, int &>)' (FunctionTemplate 0x1d0e8b0c930 'make_pair')
+  |                   |-MaterializeTemporaryExpr 0x1d0e8e83890 <col:24, col:31> 'int':'int' xvalue
+  |                   | `-UnaryOperator 0x1d0e8e83778 <col:24, col:31> 'int' prefix '-'
+  |                   |   `-ImplicitCastExpr 0x1d0e8e83760 <col:25, col:31> 'int' <LValueToRValue>
+  |                   |     `-ArraySubscriptExpr 0x1d0e8e83740 <col:25, col:31> 'int' lvalue
+  |                   |       |-ImplicitCastExpr 0x1d0e8e83710 <col:25> 'int *' <ArrayToPointerDecay>
+  |                   |       | `-DeclRefExpr 0x1d0e8e836d0 <col:25> 'int [10101]' lvalue Var 0x1d0e8de4540 'best' 'int [10101]'
+  |                   |       `-ImplicitCastExpr 0x1d0e8e83728 <col:30> 'int' <LValueToRValue>
+  |                   |         `-DeclRefExpr 0x1d0e8e836f0 <col:30> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  |                   `-DeclRefExpr 0x1d0e8e83790 <col:34> 'int' lvalue Var 0x1d0e8e822a8 'i' 'int'
+  `-ReturnStmt 0x1d0e8e848c0 <line:45:2, col:9>
+    `-ImplicitCastExpr 0x1d0e8e848a8 <col:9> 'bool' <IntegralToBoolean>
+      `-IntegerLiteral 0x1d0e8e84880 <col:9> 'int' 0
+
+
