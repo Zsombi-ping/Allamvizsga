@@ -22,16 +22,11 @@ from settings import *
 
 
 
-
-
-
-
 def unique(list1): 
       
     list_set = set(list1) 
     unique_list = (list(list_set)) 
     return unique_list
-
 
 
 def search_func_names(filename):
@@ -51,7 +46,6 @@ def search_func_names(filename):
     return f_names
 
 
-
 def redirect_to_file(text,outfile):
 
     original = sys.stdout
@@ -59,7 +53,6 @@ def redirect_to_file(text,outfile):
     for line in text.split('\n'):
         print(line)
     sys.stdout = original
-
 
 
 def create_subprocess_file_pipe(filepath,outfile):
@@ -83,7 +76,6 @@ def build_ast(list_of_names,filename,outfile,filepath):
         f.write(build_command)
         f.close()
         create_subprocess_file_pipe(filepath,outfile)
-
 
 
 def counting_attributes(folder_path,outfile,filepath,wrong_files):
@@ -159,7 +151,6 @@ def counting_attributes(folder_path,outfile,filepath,wrong_files):
     return (df_100,df_all)
         
 
-
 def KfoldVal(load_file):
 
         data = pd.read_csv(load_file)
@@ -176,7 +167,6 @@ def KfoldVal(load_file):
 
         for i in range(0,num_folds):
             print('\tFold '+str(i+1)+':' + str(scores['test_accuracy'][ i ]))
-
 
 
 def clear_junks_from_dataset(dataset):
@@ -204,8 +194,6 @@ def clear_junks_from_dataset(dataset):
     f.close()
 
 
-
-
 def main():
     
     #df_100 , df_all = counting_attributes(folderpath,outfile,filepath,wrong_files)
@@ -214,10 +202,7 @@ def main():
     #load_file = big_dataset
     #KfoldVal(load_file) 
     #clear_junks_from_dataset(big_dataset)
-    name = search_func_names("C:/Users/Zsombi/Desktop/Allamvizsga/main.cpp")
-    print(name)
-
-
+   
 
 if __name__ == '__main__':
     main()
