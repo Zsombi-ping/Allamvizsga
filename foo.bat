@@ -1,0 +1,1 @@
+clang-check -extra-arg=-std=c++1y -ast-dump -ast-dump-filter=main C:/Users/Zsombi/Desktop/Allamvizsga/main.cpp
