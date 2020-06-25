@@ -5,14 +5,14 @@ from PyQt5.QtGui import QFont
 from settings import *
 
 
-class Example(QMainWindow):
+class Interface(QMainWindow):
     
 
 
     def __init__(self, x,y,z):
    
         super().__init__()
-                
+        self.setFixedSize(700, 550)
         self.qlabelx = QLabel(self)
         self.qlabelx.move(50,10)
         self.qlabelx.setText("Choose feature category:")
@@ -139,5 +139,5 @@ class Example(QMainWindow):
         
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = Example("","","")
+    ex = Interface("","","")
     sys.exit(app.exec_())
