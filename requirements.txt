@@ -68,7 +68,7 @@ pandas==0.25.3
 parso==0.6.1
 pathlib==1.0.1
 pathlib2==2.3.5
-pipenv==2018.11.26
+pipenv==2022.1.8
 pluggy==0.13.1
 ply==3.11
 protobuf==3.11.3
