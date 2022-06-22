@@ -32,7 +32,7 @@ mccabe==0.6.1
 monotonic==1.5
 multiprocess==0.70.9
 nltk==3.4.5
-numpy==1.17.4
+numpy==1.22.0
 opencv-python==4.1.2.30
 pandas==0.25.3
 pathlib==1.0.1
